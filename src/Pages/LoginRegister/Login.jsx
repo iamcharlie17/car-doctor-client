@@ -1,6 +1,7 @@
 import LoginRegisterNav from "./LoginRegisterNav";
 import loginImg from "../../assets/images/login/login.svg";
 import { FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -45,7 +46,7 @@ const Login = () => {
               
               </div>
               <button className="block w-full p-3 text-center rounded-lg bg-orange-600 text-white">
-                Sign in
+                Login
               </button>
             </form>
             <div className="flex items-center space-x-1">
@@ -60,13 +61,13 @@ const Login = () => {
             </div>
             <p className="text-xs text-center">
               Don't have an account?
-              <a
+              <Link to="/register"
                 rel="noopener noreferrer"
                 href="#"
                 className="font-bold text-orange-600 "
               >
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
         </div>
