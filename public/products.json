@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Engine",
+      "image": "https://i.postimg.cc/4d7PjpVz/1.png",
+      "price": 2500
+    },
+    {
+      "id": 2,
+      "name": "Transmission",
+      "image": "https://i.postimg.cc/RVzdb6FH/2.png",
+      "price": 1500
+    },
+    {
+      "id": 3,
+      "name": "Brake Pads",
+      "image": "https://i.postimg.cc/Zn6c5Zfn/3.png",
+      "price": 100
+    },
+    {
+      "id": 4,
+      "name": "Tires",
+      "image": "https://i.postimg.cc/Kz6fb4DC/4.png",
+      "price": 600
+    },
+    {
+      "id": 5,
+      "name": "Fuel Pump",
+      "image": "https://i.postimg.cc/dtm6MskS/5.png",
+      "price": 200
+    },
+    {
+      "id": 6,
+      "name": "Radiator",
+      "image": "https://i.postimg.cc/1RFMHc9S/6.png",
+      "price": 300
+    }
+  ]
+  

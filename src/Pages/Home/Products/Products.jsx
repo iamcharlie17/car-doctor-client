@@ -1,22 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Service from "./Service";
 import { Link } from "react-router-dom";
+import Product from "./Product";
 
-const Services = () => {
-  const [services, setServices] = useState([]);
+const Products = () => {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("services.json").then((data) => setServices(data.data));
+    axios.get("products.json").then((data) => setProducts(data.data));
   }, []);
-
-  // console.log(services);
 
   return (
     <div className="mb-8">
       <div className="text-center space-y-4 pb-16 m-2">
-        <h1 className="font-semibold text-orange-600">Service</h1>
-        <h2 className="text-4xl md:text-5xl font-bold">Our Service Area</h2>
+        <h1 className="font-semibold text-orange-600">Popular Products</h1>
+        <h2 className="text-4xl md:text-5xl font-bold">Browse Our Products</h2>
         <p>
           <small className="">
             {" "}
@@ -27,14 +25,14 @@ const Services = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map((service) => (
-          <Service service={service} key={service._id} />
+        {products.map((product) => (
+          <Product product={product} key={product.id} />
         ))}
       </div>
       <div className="text-center my-4">
         <Link>
           <button className="text-orange-500 font-semibold border-[1.5px] border-orange-500 rounded px-5 py-2">
-            More Services
+            More Products
           </button>
         </Link>
       </div>
@@ -42,4 +40,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Products;

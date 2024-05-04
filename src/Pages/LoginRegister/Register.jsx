@@ -1,10 +1,27 @@
 import LoginRegisterNav from "./LoginRegisterNav";
 import loginImg from "../../assets/images/login/login.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+
+    const {registerUser} = useContext(AuthContext)
+
     const handleRegister = (e) =>{
         e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        const registerInfo = {name, email, password};
+        console.log(registerInfo)
+        registerUser(email, password)
+        .then(result => console.log(result.user))
+        .catch(error => console.log(error.message))
+
+        form.reset()
     }
 
   return (

@@ -2,11 +2,25 @@ import LoginRegisterNav from "./LoginRegisterNav";
 import loginImg from "../../assets/images/login/login.svg";
 import { FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
 
+    const {loginUser} = useContext(AuthContext)
+
     const handleLogin = (e) =>{
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const loginInfo = {email, password}
+        console.log(loginInfo)
+        loginUser(email, password)
+        .then(result => console.log(result.user))
+        .catch(e => console.log(e.message))
+
+        form.reset()
     }
 
   return (
@@ -60,7 +74,7 @@ const Login = () => {
               <FaGoogle />
             </div>
             <p className="text-xs text-center">
-              Don't have an account?
+              Do not have an account?
               <Link to="/register"
                 rel="noopener noreferrer"
                 href="#"
