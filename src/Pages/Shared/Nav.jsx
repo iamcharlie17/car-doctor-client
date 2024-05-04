@@ -8,34 +8,34 @@ const Nav = () => {
     <>
       <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
         <li className="bg-white">
-          <a>Home</a>
+          Home
         </li>
       </NavLink>
       <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
         <li>
-          <a>About</a>
+          About
         </li>
       </NavLink>
       <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
         <li>
-          <a>Services</a>
+          Services
         </li>
       </NavLink>
       <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
         <li>
-          <a>Blog</a>
+          Blog
         </li>
       </NavLink>
       <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
         <li>
-          <a>Contact</a>
+          Contact
         </li>
       </NavLink>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
