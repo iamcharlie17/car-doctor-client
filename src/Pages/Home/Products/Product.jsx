@@ -2,7 +2,7 @@ import { IoStarSharp } from "react-icons/io5";
 
 const Product = ({ product }) => {
   const { id, name, image, price } = product;
-  console.log(image);
+  // console.log(image);
   return (
     <div className="border-2 p-4 rounded-lg space-y-2 m-2">
       <div

@@ -21,7 +21,7 @@ const Choose = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4 p-2">
-        <div className="p-8 border-2 rounded-lg flex flex-col justify-center items-center hover:bg-orange-600 hover:text-white ">
+        <div className="p-8 border-2 rounded-lg flex flex-col justify-center items-center hover:bg-orange-600  hover:text-white ">
           <img className="w-1/2" src={group} alt="" />
           <h1 className="font-bold text-center">Expert Team</h1>
         </div>

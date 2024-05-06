@@ -1,6 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
+
   return (
     <div className="border-2 p-4 rounded-lg space-y-2 m-2">
       <div
@@ -12,7 +14,9 @@ const Service = ({ service }) => {
       </div>
       <div className="text-orange-600 flex justify-between">
         <h1>Price: ${service.price}</h1>
-        <FaArrowRight />
+        <Link to={`/service-details/${service._id}`}>
+          <FaArrowRight />
+        </Link>
       </div>
     </div>
   );
