@@ -27,7 +27,15 @@ const Checkout = () => {
       {/* banner end */}
 
       {/* checkout form */}
-      
+      <form className="grid col-span-1 md:grid-cols-2 gap-8 bg-gray-200 rounded-lg px-2 py-8  md:p-8 lg:p-16 mt-24" >
+        <input className="p-4 rounded-lg" type="text" name="firstName" placeholder="First Name" id="" />
+        <input className="p-4 rounded-lg" type="text" name="lastName" placeholder="Last Name" id="" />
+        <input className="p-4 rounded-lg" type="text" name="phone" placeholder="Your Phone" id="" />
+        <input className="p-4 rounded-lg" type="email" name="email" placeholder="Your Email" id="" />
+        <textarea className="p-4 rounded-lg md:col-span-2" name="message" id="" placeholder="Your Message" cols="30" rows="10"></textarea>
+        <input className=" w-full py-4 rounded-lg md:col-span-2 text-white text-xl bg-orange-600" type="submit" value="Order Confirm" />
+      </form>
+
     </div>
   );
 };
