@@ -2,35 +2,50 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Nav = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogOut=()=>{
+    logOut()
+    .then(result =>{
+      console.log(result)
+    })
+    .then(e=> console.log(e.message))
+  }
+
   const navLinks = (
     <>
-      <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
-        <li className="bg-white">
-          Home
-        </li>
+      <NavLink className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+        <li className="bg-white">Home</li>
       </NavLink>
-      <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
-        <li>
-          About
-        </li>
+      <NavLink className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+        <li>About</li>
       </NavLink>
-      <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
-        <li>
-          Services
-        </li>
+      <NavLink className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+        <li>Services</li>
       </NavLink>
-      <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
-        <li>
-          Blog
-        </li>
+      <NavLink className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+        <li>Blog</li>
       </NavLink>
-      <NavLink className='font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500'>
-        <li>
-          Contact
-        </li>
+      <NavLink className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+        <li>Contact</li>
       </NavLink>
+      {user ? (
+        <>
+        <button onClick={handleLogOut} className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">Logout</button>
+        <NavLink to='/bookings' className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+         <button className="font-semibold">My Bookings</button>
+        </NavLink>
+        </>
+      ) : (
+        <NavLink to='/login' className="font-semibold hover:border-[1.5px] rounded border-orange-500 px-4 py-1 hover:text-orange-500">
+         <button className="font-semibold">Login</button>
+        </NavLink>
+      )}
     </>
   );
 
@@ -62,7 +77,7 @@ const Nav = () => {
           </ul>
         </div>
         <div>
-          <Link  to="/" >
+          <Link to="/">
             {" "}
             <img src={logo} className="w-14 md:w-full" alt="" />
           </Link>

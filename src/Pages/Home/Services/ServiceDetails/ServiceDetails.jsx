@@ -18,10 +18,10 @@ const ServiceDetails = () => {
   //   const{img, title, price, description, facilty} = service[0]
 
   const service = useLoaderData();
-//   console.log(service);
+  console.log(service);
 
   const { img, price, description, facility, title, _id } = service[0];
-  console.log(_id)
+  // console.log(_id)
 
   return (
     <div className="min-h-screen mx-2 ">
@@ -210,7 +210,7 @@ const ServiceDetails = () => {
           {/* price section */}
           <div className="my-8 space-y-6">
             <h1 className="text-4xl font-bold">Price: ${price}</h1>
-            <Link to={`/service/${_id}`}>
+            <Link to={`/services/${_id}`}>
               <button className="text-2xl bg-orange-600 w-full text-white py-3 rounded-lg">
                 Proceed Checkout
               </button>
