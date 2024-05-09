@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import  bookingBanner  from "../../../assets/images/banner/4.jpg";
+import axios from "axios";
 
 const Bookings = () => {
   const user = useContext(AuthContext);
@@ -13,9 +14,13 @@ const Bookings = () => {
 
   const url = `http://localhost:3100/bookings?email=${user?.user?.email}`;
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setBookings(data));
+
+    axios.get(url, {withCredentials: true})
+    .then(res => setBookings(res.data))
+
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => setBookings(data));
   }, [url, control]);
 
     // console.log(bookings);
