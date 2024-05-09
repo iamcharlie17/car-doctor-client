@@ -7,7 +7,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3100/services").then((data) => setServices(data.data));
+    axios.get("http://localhost:3100/services", {withCredentials: true}).then((data) => setServices(data.data));
   }, []);
 
   // console.log(services);

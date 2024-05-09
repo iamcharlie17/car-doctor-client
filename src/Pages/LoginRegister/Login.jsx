@@ -28,13 +28,13 @@ const Login = () => {
         console.log(result.user);
         navigate(location?.state ? location?.state : "/");
 
-        axios
-          .post(
-            "http://localhost:3100/jwt",
-            { email },
-            { withCredentials: true }
-          )
-          .then((res) => console.log(res.data));
+        // axios
+        //   .post(
+        //     "http://localhost:3100/jwt",
+        //     { email },
+        //     { withCredentials: true }
+        //   )
+        //   .then((res) => console.log(res.data));
       })
       .catch((e) => console.log(e.message));
 
